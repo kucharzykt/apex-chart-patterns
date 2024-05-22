@@ -12,12 +12,12 @@ Whether you want minimalistic thin lines or bold, thick patterns, our solution h
 ## Minimal Chart Patterns
 ### Colorful
 <div  style="float: left"><p  align="center">
-<img  src="readme_files/min-color.png"  width="800"  />
+<img  src="readme_files/minimal-color.png"  width="800"  />
 </p></div>
 
 ### Black and white
 <div  style="float: left"><p  align="center">
-<img  src="readme_files/min-bw.png"  width="800"  />
+<img  src="readme_files/minimal-bw.png"  width="800"  />
 </p></div>
 
 ## Bold Chart Patterns
