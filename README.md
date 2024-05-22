@@ -1,4 +1,4 @@
-# Apex Chart Patterns
+<h1> Apex Chart Patterns <h1>
 
 ## About
 Welcome to the demo application for apex-chart-patterns!
@@ -21,12 +21,12 @@ Whether you want minimalistic thin lines or bold, thick patterns, our solution h
 </p></div>
 
 ## Bold Chart Patterns
-### Colorful
+#### Colorful
 <div  style="float: left"><p  align="center">
 <img  src="readme_files/bold-color.png"  width="800"  />
 </p></div>
 
-### Black and white
+#### Black and white
 <div  style="float: left"><p  align="center">
 <img  src="readme_files/bold-bw.png"  width="800"  />
 </p></div>
