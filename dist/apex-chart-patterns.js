@@ -1,277 +1,19 @@
-var patterns = [
-  {
-    "id": "pattern-dots",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#437C94" },
-      { "type": "circle", "cx": "5", "cy": "5", "r": "3", "fill": "#FFFFFF" },
-      { "type": "circle", "cx": "15", "cy": "15", "r": "3", "fill": "#FFFFFF" }
-    ]
-  },
-  {
-    "id": "pattern-stripes",
-    "x": "0",
-    "y": "0",
-    "width": "10",
-    "height": "10",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#4C825C" },
-      { "type": "rect", "y": "5", "width": "10", "height": "2", "fill": "#FFFFFF" }
-    ]
-  },
-  {
-    "id": "pattern-diagonal-stripes",
-    "x": "0",
-    "y": "0",
-    "width": "10",
-    "height": "10",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#A36472" },
-      { "type": "line", "x1": "0", "y1": "0", "x2": "10", "y2": "10", "stroke": "#ffffff", "stroke-width": "1" },
-      { "type": "line", "x1": "10", "y1": "0", "x2": "0", "y2": "10", "stroke": "#A36472", "stroke-width": "1" }
-    ]
-  },
-  {
-    "id": "pattern-cubes",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      {
-        "type": "g", "id": "cube", "children": [
-          { "type": "rect", "width": "100%", "height": "100%", "fill": "#89723F" },
-          { "type": "path", "d": "M0 0l10 5v10l-10 -5z", "fill": "#ffffff" },
-          { "type": "path", "d": "M20 0l-10 5v10l10 -5", "fill": "#ffffff" }
-        ]
-      },
-      { "type": "use", "x": "5", "y": "5", "xlink:href": "#cube" },
-      { "type": "use", "x": "-5", "y": "5", "xlink:href": "#cube" }
-    ]
-  },
-  {
-    "id": "pattern-hexagons",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#CA4D3C" },
-      { "type": "polygon", "points": "5,0 9,1.75 9,8.25 5,10 1,8.25 1,1.75", "fill": "#ffffff" }
-    ]
-  },
-  {
-    "id": "pattern-rectangles",
-    "x": "0",
-    "y": "0",
-    "width": "30",
-    "height": "30",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#846A92" },
-      { "type": "rect", "x": "0", "y": "0", "width": "5", "height": "10", "fill": "#ffffff" },
-      { "type": "rect", "x": "10", "y": "5", "width": "5", "height": "10", "fill": "#ffffff" },
-      { "type": "rect", "x": "20", "y": "10", "width": "5", "height": "10", "fill": "#ffffff" }
-    ]
-  },
-  {
-    "id": "pattern-zigzag",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#4F7D7B" },
-      { "type": "path", "d": "M0 10 L10 0 L20 10 L10 20 Z", "fill": "none", "stroke": "#ffffff", "stroke-width": "1" }
-    ]
-  },
-  {
-    "id": "pattern-polka",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#AA643B" },
-      { "type": "circle", "cx": "5", "cy": "5", "r": "3", "fill": "#ffffff" },
-      { "type": "circle", "cx": "15", "cy": "15", "r": "3", "fill": "#ffffff" },
-      { "type": "circle", "cx": "10", "cy": "10", "r": "3", "fill": "#ffffff" }
-    ]
-  },
-  {
-    "id": "pattern-checkerboard",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#587B86" },
-      { "type": "rect", "x": "0", "y": "0", "width": "6", "height": "6", "fill": "#ffffff" },
-      { "type": "rect", "x": "10", "y": "10", "width": "6", "height": "6", "fill": "#ffffff" }
-    ]
-  },
-  {
-    "id": "pattern-triangles",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#5F7D4F" },
-      { "type": "polygon", "points": "5,0 10,10 0,10", "fill": "#ffffff" },
-    ]
-  }
-];
-var patternsBw = [
-  {
-    "id": "pattern-dots-bw",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "circle", "cx": "5", "cy": "5", "r": "3", "fill": "#000000" },
-      { "type": "circle", "cx": "15", "cy": "15", "r": "3", "fill": "#000000" }
-    ]
-  },
-  {
-    "id": "pattern-stripes-bw",
-    "x": "0",
-    "y": "0",
-    "width": "10",
-    "height": "10",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "rect", "y": "5", "width": "10", "height": "2", "fill": "#000000" }
-    ]
-  },
-  {
-    "id": "pattern-diagonal-stripes-bw",
-    "x": "0",
-    "y": "0",
-    "width": "10",
-    "height": "10",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "line", "x1": "0", "y1": "0", "x2": "10", "y2": "10", "stroke": "#000000", "stroke-width": "1" },
-      { "type": "line", "x1": "10", "y1": "0", "x2": "0", "y2": "10", "stroke": "#ffffff", "stroke-width": "1" }
-    ]
-  },
-  {
-    "id": "pattern-cubes-bw",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      {
-        "type": "g", "id": "cube", "children": [
-          { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-          { "type": "path", "d": "M0 0l10 5v10l-10 -5z", "fill": "#000000" },
-          { "type": "path", "d": "M20 0l-10 5v10l10 -5", "fill": "#000000" }
-        ]
-      },
-      
-      { "type": "use", "x": "5", "y": "5", "xlink:href": "#cube" },
-      { "type": "use", "x": "-5", "y": "5", "xlink:href": "#cube" }
-    ]
-  },
-  {
-    "id": "pattern-hexagons-bw",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "polygon", "points": "5,0 9,1.75 9,8.25 5,10 1,8.25 1,1.75", "fill": "#000000" }
-    ]
-  },
-  {
-    "id": "pattern-rectangles-bw",
-    "x": "0",
-    "y": "0",
-    "width": "30",
-    "height": "30",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "rect", "x": "0", "y": "0", "width": "5", "height": "10", "fill": "#000000" },
-      { "type": "rect", "x": "10", "y": "5", "width": "5", "height": "10", "fill": "#000000" },
-      { "type": "rect", "x": "20", "y": "10", "width": "5", "height": "10", "fill": "#000000" }
-    ]
-  },
-  {
-    "id": "pattern-zigzag-bw",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "path", "d": "M0 10 L10 0 L20 10 L10 20 Z", "fill": "none", "stroke": "#000000", "stroke-width": "1" }
-    ]
-  },
-  {
-    "id": "pattern-polka-bw",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "circle", "cx": "5", "cy": "5", "r": "3", "fill": "#000000" },
-      { "type": "circle", "cx": "15", "cy": "15", "r": "3", "fill": "#000000" },
-      { "type": "circle", "cx": "10", "cy": "10", "r": "3", "fill": "#000000" }
-    ]
-  },
-  {
-    "id": "pattern-checkerboard-bw",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "rect", "x": "0", "y": "0", "width": "6", "height": "6", "fill": "#000000" },
-      { "type": "rect", "x": "10", "y": "10", "width": "6", "height": "6", "fill": "#000000" }
-    ]
-  },
-  {
-    "id": "pattern-triangles-bw",
-    "x": "0",
-    "y": "0",
-    "width": "20",
-    "height": "20",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "polygon", "points": "5,0 10,10 0,10", "fill": "#000000" },
-      //{ "type": "polygon", "points": "15,10 20,0 10,0", "fill": "#000000" }
-    ]
-  }
-];
+
+//Apex redwood extracted colors
+var pine = ['#60BF78','#548C62','#36593F','#DBB46B','#7A7A7A'];
+var peble = ['#79AEF2','#666C73','#F2C777','#D9B97E','#7A7A7A'];
+var slate = ['#50BFBF','#667373','#F2C777','#D9B97E','#7A7A7A'];
+var teal = ['#49736F','#9BBFBC','#50BFAB','#F2C777','#7A7A7A'];
+var ocean = ['#274B59','#42778C','#639AA6','#F2C777','#7A7A7A'];
+var lilac = ['#85A0F2','#68718C','#858DA6','#F2C777','#7A7A7A'];
+var rose = ['#F26B8F','#734551','#A66879','#DBB46B','#7A7A7A'];
+var sienna = ['#F2C777','#7A7A7A','#D9A76A','#733B27','#A6583C'];
+var plum = ['#D97ECA','#4F3F59','#7E688C','#F2C777','#7A7A7A'];
+var sky = ['#065F73','#248EA6','#29C7D9','#F2C777','#7A7A7A'];
+//Adobe kuler random
+var kuler1 = ['#065F73','#248EA6','#29C7D9','#F2C777','#BDBDBD'];
+
+var colorPalette = pine;
 var patternsMinimal = [
   {
     "id": "pattern-dots-minimal",
@@ -281,9 +23,9 @@ var patternsMinimal = [
     "height": "10",
     "patternUnits": "userSpaceOnUse",
     "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#437C94" },
-      { "type": "circle", "cx": "3", "cy": "3", "r": "1", "fill": "#FFFFFF" },
-      { "type": "circle", "cx": "9", "cy": "9", "r": "1", "fill": "#FFFFFF" }
+      { "type": "rect", "width": "100%", "height": "100%", "fill": "#FFFFFF" },
+      { "type": "circle", "cx": "3", "cy": "3", "r": "1", "fill": colorPalette[0] },
+      { "type": "circle", "cx": "9", "cy": "9", "r": "1", "fill": colorPalette[0] }
     ]
   },
   {
@@ -294,8 +36,8 @@ var patternsMinimal = [
     "height": "10",
     "patternUnits": "userSpaceOnUse",
     "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#4C825C" },
-      { "type": "rect", "y": "2", "width": "5", "height": "1", "fill": "#FFFFFF" }
+      { "type": "rect", "width": "100%", "height": "100%", "fill": "#FFFFFF" },
+      { "type": "rect", "y": "2", "width": "5", "height": "1", "fill": colorPalette[1] }
     ]
   },
   {
@@ -306,67 +48,23 @@ var patternsMinimal = [
     "height": "12",
     "patternUnits": "userSpaceOnUse",
     "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#A36472" },
+      { "type": "rect", "width": "100%", "height": "100%", "fill": "#FFFFFF" },
       { "type": "line", "x1": "0", "y1": "0", "x2": "12", "y2": "12", "stroke": "#ffffff", "stroke-width": "1" },
-      { "type": "line", "x1": "12", "y1": "0", "x2": "0", "y2": "12", "stroke": "#A36472", "stroke-width": "1" }
-    ]
-  },
-  {
-    "id": "pattern-cubes-minimal",
-    "x": "0",
-    "y": "0",
-    "width": "15",
-    "height": "15",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      {
-        "type": "g", "id": "cube", "children": [
-          { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-          { "type": "path", "d": "M0 0l10 5v10l-10 -5z", "fill": "#89723F" },
-          { "type": "path", "d": "M15 0l-10 5v10l10 -5", "fill": "#89723F" }
-        ]
-      },
-      
-      { "type": "use", "x": "3", "y": "3", "xlink:href": "#cube" },
-      { "type": "use", "x": "-3", "y": "3", "xlink:href": "#cube" }
-    ]
-  },
-  {
-    "id": "pattern-hexagons-minimal",
-    "x": "0",
-    "y": "0",
-    "width": "15",
-    "height": "15",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#CA4D3C" },
-      { "type": "polygon", "points": "2,0 4,1.732 4,5.196 2,6.928 0,5.196 0,1.732", "fill": "#ffffff" }
+      { "type": "line", "x1": "12", "y1": "0", "x2": "0", "y2": "12", "stroke": colorPalette[2], "stroke-width": "1" }
     ]
   },
   {
     "id": "pattern-rectangles-minimal",
     "x": "0",
     "y": "0",
-    "width": "20",
-    "height": "20",
+    "width": "15",
+    "height": "15",
     "patternUnits": "userSpaceOnUse",
     "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#846A92" },
-      { "type": "rect", "x": "0", "y": "0", "width": "2", "height": "5", "fill": "#ffffff" },
-      { "type": "rect", "x": "10", "y": "5", "width": "2", "height": "5", "fill": "#ffffff" },
-      { "type": "rect", "x": "20", "y": "10", "width": "2", "height": "5", "fill": "#ffffff" }
-    ]
-  },
-  {
-    "id": "pattern-zigzag-minimal",
-    "x": "0",
-    "y": "0",
-    "width": "30",
-    "height": "30",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#4F7D7B" },
-      { "type": "path", "d": "M0 15 L15 0 L30 15 L15 30 Z", "fill": "none", "stroke": "#ffffff", "stroke-width": "1" }
+      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
+      { "type": "rect", "x": "0", "y": "0", "width": "2", "height": "5", "fill": colorPalette[3] },
+      { "type": "rect", "x": "6", "y": "6", "width": "2", "height": "5", "fill": colorPalette[3] }//,
+      //{ "type": "rect", "x": "12", "y": "12", "width": "2", "height": "5", "fill": colorPalette[3] }
     ]
   },
   {
@@ -377,36 +75,10 @@ var patternsMinimal = [
     "height": "15",
     "patternUnits": "userSpaceOnUse",
     "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#AA643B" },
-      { "type": "circle", "cx": "3", "cy": "3", "r": "1", "fill": "#ffffff" },
-      { "type": "circle", "cx": "7", "cy": "7", "r": "1", "fill": "#ffffff" },
-      { "type": "circle", "cx": "5", "cy": "5", "r": "1", "fill": "#ffffff" }
-    ]
-  },
-  {
-    "id": "pattern-checkerboard-minimal",
-    "x": "0",
-    "y": "0",
-    "width": "15",
-    "height": "15",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#587B86" },
-      { "type": "rect", "x": "0", "y": "0", "width": "3", "height": "3", "fill": "#ffffff" },
-      { "type": "rect", "x": "6", "y": "6", "width": "3", "height": "3", "fill": "#ffffff" }
-    ]
-  },
-  {
-    "id": "pattern-triangles-minimal",
-    "x": "0",
-    "y": "0",
-    "width": "15",
-    "height": "15",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#5F7D4F" },
-      { "type": "polygon", "points": "2.5,0 5,5 0,5", "fill": "#ffffff" },
-      //{ "type": "polygon", "points": "15,10 20,0 10,0", "fill": "#ffffff" }
+      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
+      { "type": "circle", "cx": "3", "cy": "3", "r": "1", "fill": colorPalette[4] },
+      { "type": "circle", "cx": "7", "cy": "7", "r": "1", "fill": colorPalette[4] },
+      { "type": "circle", "cx": "5", "cy": "5", "r": "1", "fill": colorPalette[4] }
     ]
   }
 ];
@@ -450,61 +122,17 @@ var patternsBwMinimal = [
     ]
   },
   {
-    "id": "pattern-cubes-bw-minimal",
-    "x": "0",
-    "y": "0",
-    "width": "15",
-    "height": "15",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      {
-        "type": "g", "id": "cube", "children": [
-          { "type": "rect", "width": "100%", "height": "100%", "fill": "#000000" },
-          { "type": "path", "d": "M0 0l10 5v10l-10 -5z", "fill": "#ffffff" },
-          { "type": "path", "d": "M15 0l-10 5v10l10 -5", "fill": "#ffffff" }
-        ]
-      },
-      
-      { "type": "use", "x": "3", "y": "3", "xlink:href": "#cube" },
-      { "type": "use", "x": "-3", "y": "3", "xlink:href": "#cube" }
-    ]
-  },
-  {
-    "id": "pattern-hexagons-bw-minimal",
-    "x": "0",
-    "y": "0",
-    "width": "15",
-    "height": "15",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "polygon", "points": "2,0 4,1.732 4,5.196 2,6.928 0,5.196 0,1.732", "fill": "#000000" }
-    ]
-  },
-  {
     "id": "pattern-rectangles-bw-minimal",
     "x": "0",
     "y": "0",
-    "width": "20",
-    "height": "20",
+    "width": "15",
+    "height": "15",
     "patternUnits": "userSpaceOnUse",
     "elements": [
       { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
       { "type": "rect", "x": "0", "y": "0", "width": "2", "height": "5", "fill": "#000000" },
-      { "type": "rect", "x": "10", "y": "5", "width": "2", "height": "5", "fill": "#000000" },
-      { "type": "rect", "x": "20", "y": "10", "width": "2", "height": "5", "fill": "#000000" }
-    ]
-  },
-  {
-    "id": "pattern-zigzag-bw-minimal",
-    "x": "0",
-    "y": "0",
-    "width": "30",
-    "height": "30",
-    "patternUnits": "userSpaceOnUse",
-    "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "path", "d": "M0 15 L15 0 L30 15 L15 30 Z", "fill": "none", "stroke": "#000000", "stroke-width": "1" }
+      { "type": "rect", "x": "6", "y": "6", "width": "2", "height": "5", "fill": "#000000" }//,
+      //{ "type": "rect", "x": "12", "y": "12", "width": "2", "height": "5", "fill": "#000000" }
     ]
   },
   {
@@ -520,30 +148,141 @@ var patternsBwMinimal = [
       { "type": "circle", "cx": "7", "cy": "7", "r": "1", "fill": "#000000" },
       { "type": "circle", "cx": "5", "cy": "5", "r": "1", "fill": "#000000" }
     ]
-  },
+  }
+];
+var patterns = [
   {
-    "id": "pattern-checkerboard-bw-minimal",
+    "id": "pattern-dots",
     "x": "0",
     "y": "0",
-    "width": "15",
-    "height": "15",
+    "width": "20",
+    "height": "20",
     "patternUnits": "userSpaceOnUse",
     "elements": [
-      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "rect", "x": "0", "y": "0", "width": "3", "height": "3", "fill": "#000000" },
-      { "type": "rect", "x": "6", "y": "6", "width": "3", "height": "3", "fill": "#000000" }
+      { "type": "rect", "width": "100%", "height": "100%", "fill": colorPalette[0] },
+      { "type": "circle", "cx": "5", "cy": "5", "r": "3", "fill": "#FFFFFF" },
+      { "type": "circle", "cx": "15", "cy": "15", "r": "3", "fill": "#FFFFFF" }
     ]
   },
   {
-    "id": "pattern-triangles-bw-minimal",
+    "id": "pattern-stripes",
     "x": "0",
     "y": "0",
-    "width": "15",
-    "height": "15",
+    "width": "10",
+    "height": "10",
+    "patternUnits": "userSpaceOnUse",
+    "elements": [
+      { "type": "rect", "width": "100%", "height": "100%", "fill": colorPalette[1] },
+      { "type": "rect", "y": "5", "width": "10", "height": "2", "fill": "#FFFFFF" }
+    ]
+  },
+  {
+    "id": "pattern-diagonal-stripes",
+    "x": "0",
+    "y": "0",
+    "width": "10",
+    "height": "10",
+    "patternUnits": "userSpaceOnUse",
+    "elements": [
+      { "type": "rect", "width": "100%", "height": "100%", "fill": colorPalette[2] },
+      { "type": "line", "x1": "0", "y1": "0", "x2": "10", "y2": "10", "stroke": "#ffffff", "stroke-width": "1" },
+      { "type": "line", "x1": "10", "y1": "0", "x2": "0", "y2": "10", "stroke": colorPalette[2], "stroke-width": "1" }
+    ]
+  },
+  {
+    "id": "pattern-rectangles",
+    "x": "0",
+    "y": "0",
+    "width": "30",
+    "height": "30",
+    "patternUnits": "userSpaceOnUse",
+    "elements": [
+      { "type": "rect", "width": "100%", "height": "100%", "fill": colorPalette[3] },
+      { "type": "rect", "x": "0", "y": "0", "width": "5", "height": "10", "fill": "#ffffff" },
+      { "type": "rect", "x": "10", "y": "5", "width": "5", "height": "10", "fill": "#ffffff" },
+      { "type": "rect", "x": "20", "y": "10", "width": "5", "height": "10", "fill": "#ffffff" }
+    ]
+  },
+  {
+    "id": "pattern-polka",
+    "x": "0",
+    "y": "0",
+    "width": "20",
+    "height": "20",
+    "patternUnits": "userSpaceOnUse",
+    "elements": [
+      { "type": "rect", "width": "100%", "height": "100%", "fill": colorPalette[4] },
+      { "type": "circle", "cx": "5", "cy": "5", "r": "3", "fill": "#ffffff" },
+      { "type": "circle", "cx": "15", "cy": "15", "r": "3", "fill": "#ffffff" },
+      { "type": "circle", "cx": "10", "cy": "10", "r": "3", "fill": "#ffffff" }
+    ]
+  }
+];
+var patternsBw = [
+  {
+    "id": "pattern-dots-bw",
+    "x": "0",
+    "y": "0",
+    "width": "20",
+    "height": "20",
     "patternUnits": "userSpaceOnUse",
     "elements": [
       { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
-      { "type": "polygon", "points": "2.5,0 5,5 0,5", "fill": "#000000" },
+      { "type": "circle", "cx": "5", "cy": "5", "r": "3", "fill": "#000000" },
+      { "type": "circle", "cx": "15", "cy": "15", "r": "3", "fill": "#000000" }
+    ]
+  },
+  {
+    "id": "pattern-stripes-bw",
+    "x": "0",
+    "y": "0",
+    "width": "10",
+    "height": "10",
+    "patternUnits": "userSpaceOnUse",
+    "elements": [
+      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
+      { "type": "rect", "y": "5", "width": "10", "height": "2", "fill": "#000000" }
+    ]
+  },
+  {
+    "id": "pattern-diagonal-stripes-bw",
+    "x": "0",
+    "y": "0",
+    "width": "10",
+    "height": "10",
+    "patternUnits": "userSpaceOnUse",
+    "elements": [
+      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
+      { "type": "line", "x1": "0", "y1": "0", "x2": "10", "y2": "10", "stroke": "#000000", "stroke-width": "1" },
+      { "type": "line", "x1": "10", "y1": "0", "x2": "0", "y2": "10", "stroke": "#ffffff", "stroke-width": "1" }
+    ]
+  },
+  {
+    "id": "pattern-rectangles-bw",
+    "x": "0",
+    "y": "0",
+    "width": "30",
+    "height": "30",
+    "patternUnits": "userSpaceOnUse",
+    "elements": [
+      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
+      { "type": "rect", "x": "0", "y": "0", "width": "5", "height": "10", "fill": "#000000" },
+      { "type": "rect", "x": "10", "y": "5", "width": "5", "height": "10", "fill": "#000000" },
+      { "type": "rect", "x": "20", "y": "10", "width": "5", "height": "10", "fill": "#000000" }
+    ]
+  },
+  {
+    "id": "pattern-polka-bw",
+    "x": "0",
+    "y": "0",
+    "width": "20",
+    "height": "20",
+    "patternUnits": "userSpaceOnUse",
+    "elements": [
+      { "type": "rect", "width": "100%", "height": "100%", "fill": "#ffffff" },
+      { "type": "circle", "cx": "5", "cy": "5", "r": "3", "fill": "#000000" },
+      { "type": "circle", "cx": "15", "cy": "15", "r": "3", "fill": "#000000" },
+      { "type": "circle", "cx": "10", "cy": "10", "r": "3", "fill": "#000000" }
     ]
   }
 ];
@@ -603,7 +342,7 @@ function addPatterns(pi_options, pi_color_mode){
       if(pi_color_mode == 'minimal-bw'){
           data.series[ i ].color = "url(#" + patternsBwMinimal[i].id + ")";
       }
-      data.series[ i ].borderColor = pi_color_mode == 'bw' ? "#000000" : "#0F3248";
+      data.series[ i ].borderColor = pi_color_mode == 'bw' ? "#000000" : "#29332E";
     }
     return data;
   };
