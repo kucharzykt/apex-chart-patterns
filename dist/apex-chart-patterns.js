@@ -11,7 +11,7 @@ var sienna = ['#F2C777','#7A7A7A','#D9A76A','#733B27','#A6583C'];
 var plum = ['#D97ECA','#4F3F59','#7E688C','#F2C777','#7A7A7A'];
 var sky = ['#065F73','#248EA6','#29C7D9','#F2C777','#7A7A7A'];
 //Adobe kuler random
-var kuler1 = ['#065F73','#248EA6','#29C7D9','#F2C777','#BDBDBD'];
+var kuler1 = ['#DB9140','#C940DB','#8EDB40','#40B1DB','#6D8654'];
 
 var colorPalette = pine;
 var patternsMinimal = [
@@ -49,8 +49,8 @@ var patternsMinimal = [
     "patternUnits": "userSpaceOnUse",
     "elements": [
       { "type": "rect", "width": "100%", "height": "100%", "fill": "#FFFFFF" },
-      { "type": "line", "x1": "0", "y1": "0", "x2": "12", "y2": "12", "stroke": "#ffffff", "stroke-width": "1" },
-      { "type": "line", "x1": "12", "y1": "0", "x2": "0", "y2": "12", "stroke": colorPalette[2], "stroke-width": "1" }
+      { "type": "line", "x1": "0", "y1": "0", "x2": "12", "y2": "12", "stroke": colorPalette[2], "stroke-width": "1" },
+      { "type": "line", "x1": "12", "y1": "0", "x2": "0", "y2": "12", "stroke": "#FFFFFF", "stroke-width": "1" }
     ]
   },
   {
